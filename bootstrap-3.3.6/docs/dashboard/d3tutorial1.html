@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>d3 tutorial</title>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<!-- <script type="text/javascript" src="../lib/d3.v3.min.js"></script> -->
+	<script src="https://d3js.org/d3-collection.v1.min.js"></script>
+	<script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
+	<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+	<script src="https://d3js.org/d3-request.v1.min.js"></script>
+</head>
+
+
+
+<!-- 	
+<body>
+	<script>
+//	d3.xml("/Users/fanny/GitHub/budgetTool/bootstrap-3.3.6/docs/dashboard/Example.xml", "application/xml", function(xml) {
+	
+	d3.xml("/Users/fanny/GitHub/budgetTool/bootstrap-3.3.6/docs/dashboard/Example.xml", function(xml) {
+	
+		//var data = xml.path;
+		//console.log("data uit de xml=  " + data);
+
+	var runnah = xml.documentElement.getElementsByTagName("runner");
+	console.log(runnah);
+
+	  var runners = d3.select(xml).selectAll("runner")[0];
+	  var table = d3.select("#presentation").append("table").attr("class","grid");
+		
+	  var thead = table.append("thead");
+	  thead.append("th").text("Gender");
+	  thead.append("th").text("City");
+	  thead.append("th").text("Time");
+	  thead.append("th").text("Pace");
+		
+	  var tr = table.selectAll("tr")
+	    .data(runners)
+	   .enter().append("tr");
+	  
+	  // place 
+	  var td = tr.selectAll("td")
+	    .data(function(d) {
+	      return d3.select(d).attr("gender");
+	    })
+	   .enter().append("td")
+	    .text(function(d) {
+	      return d;
+	    });
+	  
+	  // city
+	  tr.selectAll("tr")
+	    .data(function(d) {
+	      return d3.select(d).select("city")[0]; 
+	    })
+	   .enter().append("td")
+	    .text(function(d) {
+	      return d.textContent;
+	    });
+		    
+	  // time
+	  tr.selectAll("tr")
+	    .data(function(d) {
+	      return d3.select(d).select("time")[0]; 
+	    })
+	   .enter().append("td")
+	    .text(function(d) {
+	      return d.textContent;
+	    });
+			
+	  // pace
+	  tr.selectAll("tr")
+	    .data(function(d) {
+	      return d3.select(d).select("pace")[0]; 
+	    })
+	   .enter().append("td")
+	    .text(function(d) {
+	      return d.textContent;
+	    });
+	});
+</script>
+</body>
+ -->
+
+
+
+
+
+<body>
+
+	 <!-- <p>This is a paragraph.</p> -->
+
+	<script>
+		// select the <p> html element
+//		d3.select("p");
+
+		// appends text to the element
+//		d3.select("p").text("Hello World!");
+
+//		d3.select("body")
+//			.append("p")
+			//.text("Hello there?")
+			//.style("color", "red");
+
+		var dataArray = [20, 40, 50, 60];
+		var width = 500;
+		var height = 500;
+
+
+		// let's make a svg container & call it canvas
+		var canvas = d3.select("body")
+			.append("svg")
+			.attr("width", 500)
+			.attr("height", 500);
+
+		var widthScale = d3.scale.linear()
+					.domain([0, 60]) //where to fetch the original range from
+					.range([0, 500]); //resulting range
+
+
+		//var	circle = canvas.append("circle")						
+					//.attr("cx", 250)  //center attribute in y
+					//.attr("cy", 250)
+					//.attr("r", 50)
+					//.attr("fill", "red");
+
+		//var rect = canvas.append("rect")
+	//					.attr("width", 100)
+	//					.attr("height", 50);
+
+		//var	line = canvas.append("line")
+						//.attr("x1", 0)						
+						//.attr("y1", 100)
+						//.attr("x2", 400)							
+						//.attr("y2", 400)
+						//.attr("stroke", "green")
+						//.attr("stroke-width", 10);
+
+
+		// visualizing data
+		
+
+
+		//data method binds the data to those rectangles
+		var bars = canvas.selectAll("rect")
+					.data(dataArray) //binds data to each element
+					.enter() //placeholder for each & every element
+						.append("rect")
+						.attr("width", function(d) {return d * 10;})
+						//.attr("width", function (d) {return widthScale;})
+						.attr("height", 50)
+						.attr("y", function(d,i) {return i * 100;});
+		//scales and functions have similar purpose
+
+		//console.log(canvas);
+
+	</script>
+
+</body>
+
+
+</html>

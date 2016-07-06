@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>D3.xml Example</title>
+   <script type="text/javascript" src="http://mbostock.github.com/d3/d3.v2.js"></script>
+   <style type="text/css">
+.chart div {
+   font: 10px sans-serif;
+   background-color: steelblue;
+   text-align: right;
+   padding: 3px;
+   margin: 1px;
+   color: white;
+ }
+    </style
+</head>
+<body>
+<div id="chart" class="chart">
+
+</div>
+<script>
+var metadataurl = "/Users/fanny/GitHub/budgetTool/bootstrap-3.3.6/docs/dashboard/Example.xml";
+
+d3.xml(metadataurl, "application/xml", function(xml) {
+  d3.select("#chart")
+    .selectAll("div")
+    .data(xml.documentElement.getElementsByTagName("value"))
+    .enter().append("div")
+      .style("width", function(d) { return d.textContent * 10 + "px"; })
+      .text(function(d) { return d.textContent; });
+});
+
+/*print(stuff);
+console.log(stuff);
+*/
+</script>
+</body>
+</html>
+

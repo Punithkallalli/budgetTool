@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Zelig Budget Tool</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      
+      <div class="container-fluid">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Zelig Budget Tool</a>
+        </div>
+
+
+
+<!-- TEMPORARILY DISABLE global variables form
+        <!-- ENTER GLOBAL EPSOLON/BETA HERE!!! -->
+        <!--add option to enter global parameters in header locked at the top-->
+        
+        <div id="navbar" class="navbar-collapse collapse">
+<!-- 
+          <form class="form-inline">
+            <div class="text-right">
+            <div class="form-group">
+            <label class="sr-only" for="inputEpsilon">Epsilon</label>
+              
+           <label for="inputEpsilon">Epsilon ⍷</label>
+              <input type="number" class="form-control form-control-sm" id="inputEpsilon" placeholder="Enter epsilon">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="inputDelta">Delta</label> 
+              <label for="inputDelta">Delta δ</label>
+              <input type="number" class="form-control form-control-sm" id="inputDelta" placeholder="Enter delta">
+            </div>
+            <div class="form-group">
+
+              <label class="sr-only" for="inputBeta">Beta</label>
+              <label for="inputBeta">Beta β</label>
+              <input type="number" class="form-control form-control-sm" id="inputBeta" placeholder="Enter beta">
+            </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form> -->
+
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar" id="left-sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><span class="glyphicon glyphicon-user"></span>
+              <a href="#">Fanny A User<span class="sr-only">(current)</span></li>
+            
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Export</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item</a></li>
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+            <li><a href="">More navigation</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Two Ravens</a></li>
+            <li><a href="">Documentation</a></li>
+            <li><a href="">Settings</a></li>
+            <li><a href="">Help</a></li>
+          </ul>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <nav class="navbar navbar-light bg-faded">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#left-sidebar">
+            &#9776;
+          </button>
+        </nav>
+
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Dashboard</h1>
+
+          <p>Select the variables you would like to update.</p>
+<!-- 
+        <form action="form_action.asp">
+          <input type="checkbox" name="varName" value="age">Age<br>
+          <input type="checkbox" name="varName" value="sex">Sex<br>
+          <input type="checkbox" name="varName" value="income">Income<br>
+          <br>
+          <input type="button" onclick="myFunction()" value="Upload">
+          <br><br>
+          <input type="text" id="order" size="50">
+          <input type="submit" value="Submit">
+          </form>
+ 
+ -->
+<!-- 
+<form name="varSelection" action="form_action.asp">
+<input type="checkbox" name="coffee" value="cream">Age<br>
+<input type="checkbox" name="coffee" value="sugar">Sex<br>
+<input type="checkbox" name="coffee" value="honey">Income<br>
+<br>
+<input type="button" onclick="myFunction()" value="Send order">
+<br><br>
+<input type="text" id="order" size="50">
+<input type="submit" value="Submit">
+</form>
+ -->
+
+
+
+<div class="container">
+  <h2>Variables</h2>
+  <p>Select the variable(s) you would like to upload.</p>
+  <form role="form">
+    <div class="checkbox">
+      <label><input type="checkbox" value="">Age</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" value="">Income</label>
+    </div>
+    <div class="checkbox disabled">
+      <label><input type="checkbox" value="">Sex</label>
+    </div>
+  </form>
+
+
+
+          <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Variable 1</h4>
+              <span class="text-muted">metadata/range specified</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Variable 2</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Variable 3</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>variable 4</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+          </div>
+
+          <h2 class="sub-header">Populate this Table</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Variable Name</th>
+                  <th>Statistic</th>
+                  <th>Episolon</th>
+                  <th>Accuracy</th>
+                  <th>Hold</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Income</td>
+                  <td>Mean</td>
+                  <td>0.0316</td>
+                  <td>0.0474</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>Income</td>
+                  <td>histogram</td>
+                  <td>0.0246</td>
+                  <td>0.0312</td>
+                  <td>elit</td>
+                </tr>
+                <tr>
+                  <td>sex</td>
+                  <td>histogram</td>
+                  <td>nec</td>
+                  <td>odio</td>
+                  <td>Praesent</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>libero</td>
+                  <td>Sed</td>
+                  <td>cursus</td>
+                  <td>ante</td>
+                </tr>
+                <tr>
+                  <td>1,004</td>
+                  <td>dapibus</td>
+                  <td>diam</td>
+                  <td>Sed</td>
+                  <td>nisi</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div> 
+  
+
+
+
+    <!-- Bootstrap core JavaScript
+    ==================================================
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie`10-viewport-bug-workaround.js"></script>
+    
+    // source JS file associated with this HTML
+    <script src="index.js"></script>
+
+//d3.xml() library
+<script type="text/javascript" src="../lib/d3.v3.min.js"></script>
+
+//d3.request() libraries
+<script src="https://d3js.org/d3-collection.v1.min.js"></script>
+<script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+
+<script src="jquery.js"></script>
+<!-- <script src="parsley.min.js"></script> -->
+
+<form id="form">
+</form>
+
+
+
+<!-- // <script type="text/javascript"> 
+ $('#form').parsley();
+ </script>
+ -->
+
+
+</body> 
+
+
+</html>
