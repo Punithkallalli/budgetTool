@@ -1,5 +1,5 @@
 # budgetTool
-Prototype in develoment
+Prototype in develoment  
 Files nested to preserve path dependencies with Bootstrap
 
 ##Webpage
